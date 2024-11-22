@@ -19,9 +19,6 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
-  code-analyzer:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Super-Linter
-        uses: super-linter/super-linter@v7.1.0
-        
+      - name: checkout
+        uses: hashicorp/setup-terraform@v2.0.3
+      
