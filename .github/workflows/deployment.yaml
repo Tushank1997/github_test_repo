@@ -26,8 +26,6 @@ jobs:
         run: terraform --version
 
       - name: run terraform main.tf file
-        run: |
-        cd infra
-        terraformplan
+        run: cd infra; terraform plan
         
       
