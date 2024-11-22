@@ -13,12 +13,15 @@ defaults:
 
 jobs:
   deployment-job:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout the repository
-      uses: actions/checkout@v4
+    name: deployment job
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
 
-    - name: HashiCorp - Setup Terraform
-      uses: hashicorp/setup-terraform@v3.1.2
-      run: |
-      terraform init
+  code-analyzer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Super-Linter
+        uses: super-linter/super-linter@v7.1.0
+        
