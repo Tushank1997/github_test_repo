@@ -24,5 +24,8 @@ jobs:
 
       - name: check terraform version 
         run: terraform --version
+
+      - name: run terraform main.tf file
+        run: terraform plan
         
       
