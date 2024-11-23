@@ -36,11 +36,11 @@ jobs:
       - name: check terraform version and initialize providers
         run: |
           terraform --version
+          cd infra
           terraform init
           
       - name: run terraform main.tf file
         run: |
-          cd infra
           terraform plan
         
       
