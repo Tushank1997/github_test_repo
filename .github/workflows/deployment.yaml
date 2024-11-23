@@ -36,6 +36,7 @@ jobs:
       - name: check terraform version 
         run: |
           terraform --version
+          cd infra
           terraform init
           terraform fmt
           terraform valdate
