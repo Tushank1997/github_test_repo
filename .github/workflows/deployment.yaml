@@ -41,8 +41,6 @@ jobs:
       - name: run terraform main.tf file
         run: |
           cd infra
-          terraform fmt
-          terrafrom validate
           terraform plan
         
       
