@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: setup AWS CLI
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v4
         with: 
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -28,7 +28,7 @@ jobs:
 
       - name: aws configured credentials
         run: |
-          cat ~/.aws/credentials
+          aws configure list
       
       - name: install terraform
         uses: hashicorp/setup-terraform@v2.0.3
