@@ -33,16 +33,16 @@ jobs:
       - name: install terraform
         uses: hashicorp/setup-terraform@v2.0.3
 
-      - name: check terraform version 
+      - name: check terraform version and initialize providers
         run: |
           terraform --version
-          cd infra
           terraform init
-          terraform fmt
-          terraform valdate
           
-
       - name: run terraform main.tf file
-        run: cd infra; terraform plan
+        run: |
+          cd infra
+          terraform fmt
+          terrafrom validate
+          terraform plan
         
       
